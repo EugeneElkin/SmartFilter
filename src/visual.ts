@@ -426,8 +426,6 @@ module powerbi.extensibility.visual {
                                                selectionManager.select(identities[s], true);
 
                                         }
-                                        
-                                        selectionManager.applySelectionFilter();
 
                                         host.persistProperties({
                                             merge: [{
@@ -443,7 +441,9 @@ module powerbi.extensibility.visual {
                                     }
                                 }
 
-                            }      
+                            }
+                            
+                            selectionManager.applySelectionFilter();
                         }; 
 
                         tokenizer.onAddToken = function (value, text, e) {
